@@ -31,7 +31,7 @@
             "label": "Log ID",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "If the deployment should show on a single log only, set the ID of the log here."
+            "helpMarkDown": "The ID of the log which should contain the minified JavaScript and source map."
         }, {
             "name": "path",
             "type": "string",
