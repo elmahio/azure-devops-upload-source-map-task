@@ -1,6 +1,6 @@
 # elmah.io Upload Source Map
 
-This extension is able to upload a source map and a minified JavaScript file to elmah.io. When uploading a source map, bundled and minified stack traces will be readable on elmah.io.
+This extension is able to upload a source map and a minified JavaScript file to [elmah.io](https://elmah.io). When uploading a source map, bundled and minified stack traces will be readable on elmah.io.
 
 ## Usage
 
