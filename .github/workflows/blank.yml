@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Patch vss-extension.json
         uses: onlyutkarsh/patch-files-action@v1.0.3
         with:
           files: vss-extension.json
-          patch-syntax: = /version => "3.1.${{ github.run_number }}"
+          patch-syntax: = /version => "4.0.${{ github.run_number }}"
           fail-if-no-files-patched: true
 
       - name: Patch task.json
@@ -27,8 +27,8 @@ jobs:
         with:
           files: ElmahIoUploadSourceMap/task.json
           patch-syntax: |
-            = /version/Major => "3"
-            = /version/Minor => "1"
+            = /version/Major => "4"
+            = /version/Minor => "0"
             = /version/Patch => "${{ github.run_number }}"
           fail-if-no-files-patched: true
 
@@ -45,8 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: 3.1.${{ github.run_number }}
-          release_name: Release 3.1.${{ github.run_number }}
+          tag_name: 4.0.${{ github.run_number }}
+          release_name: Release 4.0.${{ github.run_number }}
           draft: false
 
       - name: Upload vsix
@@ -56,6 +56,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./elmahio.elmah-io-upload-source-map-3.1.${{ github.run_number }}.vsix
-          asset_name: elmahio.elmah-io-upload-source-map-3.1.${{ github.run_number }}.vsix
+          asset_path: ./elmahio.elmah-io-upload-source-map-4.0.${{ github.run_number }}.vsix
+          asset_name: elmahio.elmah-io-upload-source-map-4.0.${{ github.run_number }}.vsix
           asset_content_type: application/zip

@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "elmah-io-upload-source-map",
     "name": "elmah.io Upload Source Map",
-    "version": "3.0.19",
+    "version": "4.0.0",
     "publisher": "elmahio",
     "tags": [
         "Error",
@@ -56,7 +56,7 @@
     },
     "description": "Tasks for uploading source maps to elmah.io from Azure DevOps.",
     "categories": [
-        "Azure Pipelines"
+        "Build and release"
     ],
     "icons": {
         "default": "extension-icon.png"
